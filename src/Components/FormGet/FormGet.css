@@ -1,0 +1,20 @@
+
+
+.ContainerGet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3.5em;
+}
+
+.textAreaGet {
+    resize: none;
+    border-radius: 7px;
+    padding: 1em;
+    border: none;
+    background-color: rgb(234, 233, 233);
+}
+
+.textAreaGet:focus {
+    outline: none;
+}
