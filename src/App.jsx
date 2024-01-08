@@ -1,7 +1,7 @@
 
 import './App.css'
-import FormPost from './Components/FormPost/FormPost'
 import FormGet from './Components/FormGet/FormGet'
+import FormPost from './Components/FormPost/FormPost'
 import Nav from './Components/Nav/Nav'
 function App() {
 
