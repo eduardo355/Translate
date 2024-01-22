@@ -1,4 +1,3 @@
-import './FormGet.css'
 import { useStoreText } from '../Stored/Stored'
 
 const FormGet = () => {
@@ -6,8 +5,8 @@ const FormGet = () => {
         transLate: state.transLate
     }))
     return (
-        <div className='ContainerGet'>
-            <textarea className="textAreaGet" name="" value={transLate} id="" cols="40" rows="6" readOnly></textarea>
+        <div className='flex items-center justify-center mt-20 max-sm:mt-4'>
+            <textarea className="resize-none rounded-md p-2 border-none bg-gray-300 focus:outline-none text-xl shadow-md max-sm:w-11/12 max-sm:mb-4" name="" value={transLate} id="" cols="40" rows="6" readOnly></textarea>
         </div>
     )
 }

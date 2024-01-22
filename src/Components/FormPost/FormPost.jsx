@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { TransLateRecibe } from '../EndPoint/TransLate';
 import { useStoreText } from '../Stored/Stored';
 import { Lenguage } from '../EndPoint/GetLeng';
-import './FormPost.css'
+
 
 const FormPost = () => {
 
@@ -43,18 +43,18 @@ const FormPost = () => {
     }
 
     return (
-        <div className='ContainerPost'>
-        <div className="cardLenguage">
-        <span className="cardTitle">Selecciona el lenguaje a traducir</span>
+        <div className='flex items-center flex-col'>
+        <div className="p-5 m-5 w-80 text-center">
+        <span className="text-lg font-bold mb-3 text-blue-500">Selecciona el lenguaje a traducir</span>
 
         <select
-            className='LanguageInput'
+            className=' w-full p-2 mb-3 border border-gray-300 rounded-md mt-1'
             name=""
             id=""
             onChange={(e) => setSelectedLanguage(e.target.value)}
             value={selectedLanguage}
         >
-            <option value="">Seleccione un idioma</option>
+            <option value="" className=' '>Seleccione un idioma</option>
             {Lenguages.map((language) => (
             <option key={language.language} value={language.language}>
                 {language.language}
@@ -62,10 +62,10 @@ const FormPost = () => {
             ))}
         </select>
 
-        <span className="selectedLanguage">{selectedLanguage}</span>
+        <span className="text-md">{selectedLanguage}</span>
         </div>
             <textarea 
-            className="textAreaPost" 
+            className="mt-2 resize-none rounded-md p-2 border border-gray-300 text-xl focus:outline-none shadow-md max-sm:w-11/12" 
             name="" 
             id="" 
             cols="40" 
@@ -75,11 +75,16 @@ const FormPost = () => {
             placeholder='Ingresa en lenguaje Español'
             >
             </textarea>
-            <div className="ConatinerBtn">
-                <button className='BtnFormPost' onClick={() => Traducir()}>Traducir</button>
-                <button className='BtnFormPostDelete' onClick={() => setText('')} >Borrar</button>
+            <div className="flex gap-3">
+                <button 
+                className=' mt-2 text-xl bg-transparent rounded-md border border-gray-300 p-2 transition-all font-semiboldbold hover:bg-blue-500 hover:text-white dark:bg-blue-500 dark:border-none' 
+                onClick={() => Traducir()}
+                >Traducir</button>
+                <button 
+                className=' mt-2 text-xl bg-transparent rounded-md border border-gray-300 p-2 transition-all font-semiboldbold hover:bg-red-500 hover:text-white dark:bg-red-500 dark:border-none ' 
+                onClick={() => setText('')} >Borrar</button>
             </div>
-            <span className='MessageError'>{Message}</span>
+            <span className=' text-red-500 text-xl font-bold mt-2'>{Message}</span>
         </div>
     )
 }
